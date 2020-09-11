@@ -3,4 +3,45 @@ body {
     padding: 0;
 }
 
-</section >
+h1 {
+    margin: 0;
+}
+
+h2 {
+    margin: 0;
+}
+
+h3 {
+    margin: 0;
+}
+
+p {
+    margin: 0;
+}
+
+#header {
+    height: 4vh;
+}
+
+#splash {
+    background-color: #edddcc;
+    height: 94vh;
+}
+
+#produkter {
+    background-color: #f5ebe1;
+}
+
+#list {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 1000px;
+
+}
+
+#om_os {}
+
+#land {
+    background-color: #edddcc;
+}
