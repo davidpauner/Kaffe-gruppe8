@@ -1,5 +1,5 @@
 let kaffer;
-let filter = "bønne";
+let filter = "navn";
 document.addEventListener("DOMContentLoaded", loadJSON)
 
 async function loadJSON() {
@@ -12,15 +12,27 @@ async function loadJSON() {
 function visKaffer() {
     const templatePointer = document.querySelector("template");
     const listpointer = document.querySelector("#list");
+    listpointer.innerHTML = "";
     kaffer.feed.entry.forEach(kaffe => {
-        if (filter == kaffe.gsx$bønne.$t) {
+        if (filter == "alle" || filter == kaffe.gsx$navn.$t) {
             console.log(kaffe);
             const minKlon = templatePointer.cloneNode(true).content;
-            minKlon.querySelector("h3").textContent = kaffe.gsx$bønne.$t;
+            minKlon.querySelector("h3").textContent = kaffe.gsx$navn.$t;
             minKlon.querySelector("img").scr = `images_coffee/${kaffe.gsx$billede.$t}.jpg`;
             minKlon.querySelector("p").textContent = kaffe.gsx$beskrivelse.$t;
             listpointer.appendChild(minKlon);
         }
     })
 
+}
+
+function addEventlistenersToButtons() {
+    document.querySelectorAll(".filter").forEach((btn) => {
+        btn.addEventListener("click", filterBTNs);
+    })
+}
+
+function filterBTNs() {
+    filter = this.dataset.kategori;
+    visKaffer();
 }
