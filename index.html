@@ -1,46 +1,71 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaffe</title>
     <link rel="stylesheet" href="style.css">
+    <title>Kaffe</title>
 </head>
 
+
 <body>
-    <header></header>
-
-    <section id="splash">
-        <h1>Kaffe</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur explicabo debitis voluptatem deserunt incidunt corrupti amet praesentium maiores magnam expedita, facere recusandae est beatae laborum cum doloribus, ducimus nobis delectus!</p>
-        <button>Se produkter</button>
-    </section>
-
-    <section id="produkter">
-        <h2>Produkter</h2>
-        <button class="filter valgt" data-kategori="alle">Alle</button>
-        <button class="filter" data-kategori="bønne">Bønne</button>
-        <button class="filter" data-kategori="bryggemetode">Bryggemetoder</button>
-    </section>
-
     <template>
         <article>
             <img src="" alt="">
-            <h3 class="bønne">Bønne</h3>
+            <h2 class="navn">Navn</h2>
             <p class="beskrivelse">Beskrivelse</p>
+            <p class="kategori">kategori</p>
         </article>
     </template>
 
-    <div class="list"></div>
+    <main>
+        <header class="header">
+            <img src="" alt="">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#list">Produkter</a>
+                        <a href="#om_os">Om</a>
+                        <a href="#land">land</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <section id="om os"></section>
+        <section id="splash">
+            <h1>KAFFE</h1>
+            <p>Kort tekst om et eller andet omkring kaffe. <br> Hav en god dag!</p>
+            <button>Se alle produkter</button>
+        </section>
 
-    <section id="land"></section>
+        <section id="produkter">
+            <h2 class="produkter">Produkter</h2>
+            <article class="filter_knapper">
+                <button class="filter valgt" data-kategori="alle">Alle</button>
+                <button class="filter" data-kategori="bønne">Bønne</button>
+                <button class="filter" data-kategori="bryggemetode">Bryggemetoder</button>
+            </article>
+            <h3>Alle</h3>
+            <article id="list"></article>
+        </section>
 
-    <script src="kaffe.js">
+        <section id="om_os">
+            <h2>Hvem er vi?</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iusto quidem aliquam dolorum minima saepe dicta facere nisi tempora ea officiis cumque eligendi atque soluta aspernatur mollitia, illum nesciunt totam? Dolor tenetur, optio totam commodi explicabo fugiat debitis omnis ratione culpa. Molestiae qui impedit, sint maxime, nobis aspernatur unde natus.</p>
+            <img src="" alt="">
+        </section>
 
-    </script>
+        <section id="land">
+            <img src="" alt="">
+            <h2>Vores rejse</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iusto quidem aliquam dolorum minima saepe dicta facere nisi tempora ea officiis cumque eligendi atque soluta aspernatur mollitia, illum nesciunt totam? Dolor tenetur, optio totam commodi explicabo fugiat debitis omnis ratione culpa. Molestiae qui impedit, sint maxime, nobis aspernatur unde natus.</p>
+
+
+
+        </section>
+    </main>
+    <script src="kaffe.js"></script>
 </body>
 
 </html>
