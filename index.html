@@ -1,44 +1,143 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaffe</title>
     <link rel="stylesheet" href="style.css">
+    <title>Kaffe</title>
 </head>
 
+
 <body>
-    <header></header>
-
-    <section id="splash">
-        <h1>Kaffe</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur explicabo debitis voluptatem deserunt incidunt corrupti amet praesentium maiores magnam expedita, facere recusandae est beatae laborum cum doloribus, ducimus nobis delectus!</p>
-        <button>Se produkter</button>
-    </section>
-
-    <section id="produkter">
-        <h2>Produkter</h2>
-        <button class="filter valgt" data-kategori="alle">Alle</button>
-        <button class="filter" data-kategori="bønne">Bønne</button>
-        <button class="filter" data-kategori="bryggemetode">Bryggemetoder</button>
-    </section>
-
     <template>
         <article>
             <img src="" alt="">
-            <h3 class="bønne">Bønne</h3>
+            <h2 class="navn">Navn</h2>
             <p class="beskrivelse">Beskrivelse</p>
+            <p class="kategori">kategori</p>
         </article>
     </template>
 
-    <div class="list"></div>
+    <main>
+        <header>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#list">Produkter</a>
+                        <a href="#om">Om</a>
+                        <a href="#land">land</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <section id="om os"></section>
+        <section id="splash">
+            <h1>KAFFE</h1>
+        </section>
 
-    <section id="land"></section>
+        <section>
+            <h2>Produkter</h2>
+            <article>
+                <button class="filter valgt" data-kategori="alle">Alle</button>
+                <button class="filter" data-kategori="bønne">Bønne</button>
+                <button class="filter" data-kategori="bryggemetode">Bryggemetoder</button>
+            </article>
+            <h3>Alle</h3>
+            <article id="list"></article>
+        </section>
 
-    <script src="kaffe.js">
+        <section id="om_os">
+            <h4>Hvem er vi?</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iusto quidem aliquam dolorum minima saepe dicta facere nisi tempora ea officiis cumque eligendi atque soluta aspernatur mollitia, illum nesciunt totam? Dolor tenetur, optio totam commodi explicabo fugiat debitis omnis ratione culpa. Molestiae qui impedit, sint maxime, nobis aspernatur unde natus.</p>
+        </section>
+
+        <section id="land">
+            <h4>Vores rejse</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iusto quidem aliquam dolorum minima saepe dicta facere nisi tempora ea officiis cumque eligendi atque soluta aspernatur mollitia, illum nesciunt totam? Dolor tenetur, optio totam commodi explicabo fugiat debitis omnis ratione culpa. Molestiae qui impedit, sint maxime, nobis aspernatur unde natus.</p>
+
+
+
+        </section>
+    </main>
+
+
+    <script>
+        let kaffer;
+        let filter = "alle";
+        document.addEventListener("DOMContentLoaded", loadJSON);
+
+
+
+
+        async function loadJSON() {
+            const JSONData = await fetch("https://spreadsheets.google.com/feeds/list/1cusyHmJ0ML-csQjEMGf9hkosvQJtib6zNYnf44xYeA4/od6/public/values?alt=json");
+            kaffer = await JSONData.json();
+            addEventListenersToButtons();
+            visKaffer();
+
+        }
+
+        function visKaffer() {
+            const templatePointer = document.querySelector("template");
+            const listPointer = document.querySelector("#list");
+            listPointer.innerHTML = "";
+
+            kaffer.feed.entry.forEach(kaffe => {
+                if (filter == "alle" || filter == kaffe.gsx$kategori.$t) {
+                    console.log(kaffe);
+
+                    const minKlon = templatePointer.cloneNode(true).content;
+
+                    minKlon.querySelector("h2").textContent = kaffe.gsx$navn.$t;
+
+                    minKlon.querySelector("img").src = `images_coffee/${kaffe.gsx$billede.$t}.jpg`;
+                    minKlon.querySelector(".beskrivelse").textContent = kaffe.gsx$beskrivelse.$t;
+
+
+
+
+
+                    minKlon.querySelector("article").addEventListener("click", () => visDetaljer(kaffe));
+
+                    listPointer.appendChild(minKlon);
+                }
+
+
+            })
+
+        }
+
+
+
+        function visDetaljer(kaffe) {
+            console.log(kaffe);
+
+            location.href = `detalje.html?id=${kaffe.gsx$id.$t}`
+        }
+
+        document.querySelector("#luk").addEventListener("click", () => popup.style.display = "none");
+
+
+
+        function addEventListenersToButtons() {
+            document.querySelectorAll(".filter").forEach((btn) => {
+                btn.addEventListener("click", filterBTNs);
+            });
+        }
+
+        function filterBTNs() {
+            filter = this.dataset.kategori;
+            document.querySelector("h1").textContent = this.textContent;
+
+            document.querySelectorAll(".filter").forEach((btn) => {
+                btn.classList.remove("valgt");
+            })
+            this.classList.add("valgt");
+            visKaffer();
+        }
+
+        loadJSON();
 
     </script>
 </body>
