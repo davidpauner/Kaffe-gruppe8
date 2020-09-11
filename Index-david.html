@@ -7,7 +7,7 @@
     <style>
         section {
             width: 100vw;
-            max-width: 1500px;
+            max-width: 1400px;
             margin: 0 auto;
             display: grid;
             grid-gap: 29px;
@@ -73,35 +73,7 @@
 
         }
 
-        #popup img {
-            max-width: 50%;
-        }
 
-        #popup {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.7);
-            display: none;
-        }
-
-        #popup article {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            margin: 2rem auto;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            width: 80vw;
-            height: 80vh;
-            text-align: center;
-            padding: 50px;
-            border-radius: 25px;
-
-
-        }
 
         #luk {
             position: fixed;
@@ -190,7 +162,18 @@
     <main>
 
         <header>
-            <nav></nav>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#list">Produkter</a>
+                        <a href="#om">Om</a>
+                        <a href="#land">land</a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
 
         </header>
 
@@ -269,7 +252,7 @@
 
                     minKlon.querySelector("h2").textContent = kaffe.gsx$navn.$t;
 
-                    minKlon.querySelector("img").src = `large/${kaffe.gsx$billede.$t}.jpg`;
+                    minKlon.querySelector("img").src = `images_coffee/${kaffe.gsx$billede.$t}.jpg`;
                     minKlon.querySelector(".beskrivelse").textContent = kaffe.gsx$beskrivelse.$t;
 
 
