@@ -67,7 +67,7 @@ function addEventListenersToButtons() {
 
 function filterBTNs() {
     filter = this.dataset.kategori;
-    document.querySelector("h1").textContent = this.textContent;
+    document.querySelector("h3").textContent = this.textContent;
 
     document.querySelectorAll(".filter").forEach((btn) => {
         btn.classList.remove("valgt");
