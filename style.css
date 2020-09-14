@@ -41,7 +41,7 @@ p {
 /* HEADER */
 header a {
     text-decoration: none;
-    color: black;
+    color: #552800;
     text-transform: uppercase;
     list-style-type: none;
     padding: 0px 12px;
@@ -50,11 +50,7 @@ header a {
 .header {
     display: flex;
     flex-wrap: wrap;
-    padding: 8px 0 0 8px;
-}
-
-nav {
-    max-width: 400px;
+    padding: 12px 14px;
 }
 
 header img {
@@ -63,6 +59,9 @@ header img {
 
 header li {
     list-style-type: none;
+    align-items: center;
+    font-family: helvetica;
+    padding-top: 5px;
 }
 
 
