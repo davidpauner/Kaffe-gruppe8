@@ -49,9 +49,8 @@ header a {
 
 .header {
     display: flex;
-    list-style-type: none;
     flex-wrap: wrap;
-    padding: 6px;
+    padding: 8px 0 0 8px;
 }
 
 nav {
@@ -60,6 +59,10 @@ nav {
 
 header img {
     width: 200px;
+}
+
+header li {
+    list-style-type: none;
 }
 
 
