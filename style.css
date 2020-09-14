@@ -20,15 +20,19 @@ h1 {
     font-family: helvetica;
 }
 
-h2 {}
+h2 {
+    font-family: helvetica;
+}
 
 h3 {
     display: flex;
     justify-content: center;
+    font-family: helvetica;
 }
 
 p {
     margin: 0;
+    font-family: helvetica;
 }
 
 
