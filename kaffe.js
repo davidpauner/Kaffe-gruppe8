@@ -28,7 +28,7 @@ function visKaffer() {
 
 
             minKlon.querySelector("img").src = `images_coffee/${kaffe.gsx$billede.$t}.jpg`;
-            minKlon.querySelector("img").src = `images_coffee/${kaffe.gsx$billede.$t}.png`;
+            minKlon.querySelector("img").src = `images_coffee/${kaffe.gsx$billede.$t}.jpg`;
 
 
             minKlon.querySelector(".beskrivelse").textContent = kaffe.gsx$beskrivelse.$t;
