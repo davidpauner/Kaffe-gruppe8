@@ -1,46 +1,98 @@
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kaffe</title>
     <link rel="stylesheet" href="style.css">
+    <title>Kaffe</title>
 </head>
 
+
 <body>
-    <header></header>
-
-    <section id="splash">
-        <h1>Kaffe</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur explicabo debitis voluptatem deserunt incidunt corrupti amet praesentium maiores magnam expedita, facere recusandae est beatae laborum cum doloribus, ducimus nobis delectus!</p>
-        <button>Se produkter</button>
-    </section>
-
-    <section id="produkter">
-        <h2>Produkter</h2>
-        <button class="filter valgt" data-kategori="alle">Alle</button>
-        <button class="filter" data-kategori="bønne">Bønne</button>
-        <button class="filter" data-kategori="bryggemetode">Bryggemetoder</button>
-    </section>
-
     <template>
         <article>
             <img src="" alt="">
-            <h3 class="bønne">Bønne</h3>
+            <h2 class="navn">Navn</h2>
             <p class="beskrivelse">Beskrivelse</p>
+            <p class="kategori">kategori</p>
         </article>
     </template>
 
-    <div class="list"></div>
+    <main>
+        <header class="header">
+            <img src="images_coffee/kaffe_logo.png" alt="logo">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#splash">Forside</a>
+                        <a href="#list">Produkter</a>
+                        <a href="#om_os">Om</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
 
-    <section id="om os"></section>
+        <section id="splash">
+            <h1>KAFFE</h1>
+            <p>Kort tekst om et eller andet omkring kaffe. <br> Hav en god dag!</p>
+            <button>Se alle produkter</button>
+            <img src="images_coffee/plash_pil.png" alt="splash pil">
+        </section>
 
-    <section id="land"></section>
 
-    <script src="kaffe.js">
+        <article class="pil" id="pil_splash_produkter">
+            <img src="images_coffee/brun_pil.png" alt="brun pil">
+        </article>
 
-    </script>
+
+        <section id="produkter">
+            <h2 class="produkter">Produkter</h2>
+            <article class="filter_knapper">
+                <button class="filter valgt" data-kategori="alle">Alle</button>
+                <button class="filter" data-kategori="bønne">Bønne</button>
+                <button class="filter" data-kategori="bryggemetode">Bryggemetoder</button>
+            </article>
+            <h3>Alle</h3>
+            <article id="list"></article>
+        </section>
+
+
+        <article class="pil" id="pil_produkt_om_os">
+            <img src="images_coffee/beige_pil.png" alt="beige pil">
+        </article>
+
+
+        <section id="om_os">
+            <article class="tekst">
+                <h2>Hvem er vi?</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iusto quidem aliquam dolorum minima saepe dicta facere nisi tempora ea officiis cumque eligendi atque soluta aspernatur mollitia, illum nesciunt totam? Dolor tenetur, optio totam commodi explicabo fugiat debitis omnis ratione culpa. Molestiae qui impedit, sint maxime, nobis aspernatur unde natus.</p>
+            </article>
+            <article class="billede">
+                <img src="images_coffee/friends.jpg" alt="venner">
+            </article>
+        </section>
+
+
+        <article class="pil" id="pil_om_os_land">
+            <img src="images_coffee/hvid_pil.png" alt="hvid pil">
+        </article>
+
+
+        <section id="land">
+            <article class="billede">
+                <img src="images_coffee/field.jpg" alt="mark">
+            </article>
+            <article class="tekst">
+                <h2>Vores rejse</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam iusto quidem aliquam dolorum minima saepe dicta facere nisi tempora ea officiis cumque eligendi atque soluta aspernatur mollitia, illum nesciunt totam? Dolor tenetur, optio totam commodi explicabo fugiat debitis omnis ratione culpa. Molestiae qui impedit, sint maxime, nobis aspernatur unde natus.</p>
+            </article>
+
+
+
+        </section>
+    </main>
+    <script src="kaffe.js"></script>
 </body>
 
 </html>

@@ -1,0 +1,235 @@
+/* GENERELT */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+}
+
+section {
+    padding: 60px 40px;
+}
+
+/* FONT */
+h1 {
+    margin: 0;
+    color: white;
+    font-size: 70px;
+    font-family: helvetica;
+}
+
+h2 {}
+
+h3 {
+    display: flex;
+    justify-content: center;
+}
+
+p {
+    margin: 0;
+}
+
+
+
+
+/* HEADER */
+header a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    list-style-type: none;
+    padding: 0px 12px;
+}
+
+.header {
+    display: flex;
+    list-style-type: none;
+    flex-wrap: wrap;
+    padding: 6px;
+}
+
+nav {
+    max-width: 400px;
+}
+
+header img {
+    width: 200px;
+}
+
+
+
+
+
+
+
+
+/* SPLASH */
+#splash {
+    display: flex;
+    flex-wrap: wrap;
+
+    background-image: url("images_coffee/splash_sort_50.jpg");
+    background-position: center;
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#splash h1 {
+    margin-top: 20vh;
+}
+
+#splash p {
+    margin-bottom: 20px;
+    color: white;
+    text-align: center;
+}
+
+#splash button {
+    margin-bottom: 10px;
+}
+
+#splash img {
+    margin-bottom: 40vh;
+    width: 60px;
+}
+
+
+
+
+
+
+
+/* PRODUKTER */
+#produkter {
+    background-color: #f5ebe1;
+}
+
+.produkter {
+    display: flex;
+    justify-content: center;
+}
+
+.filter_knapper {
+    display: flex;
+    justify-content: center;
+}
+
+#list p {
+    margin-bottom: 40px;
+}
+
+
+
+
+
+
+
+
+/* OM OS */
+#land {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #EBD9C3;
+}
+
+#om_os {
+    display: flex;
+    flex-wrap: wrap-reverse;
+}
+
+.tekst {
+    flex-basis: 800px;
+    flex-grow: 1;
+}
+
+.billede {
+    flex-basis: 800px;
+    flex-grow: 1;
+}
+
+
+
+
+
+
+
+
+/* PILE */
+#pil_splash_produkter {
+    background-color: #f5ebe1;
+}
+
+#pil_om_os_land {
+    background-color: #EBD9C3;
+}
+
+.pil {
+    display: flex;
+    justify-content: center;
+}
+
+.pil img {
+    width: 120px;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+
+
+@media (min-width:600px) {
+
+    /* HEADER */
+    header img {
+        width: 250px;
+    }
+
+    /* SPLASH */
+    h1 {
+        font-size: 100px;
+    }
+
+    /* PRODUKTER */
+    #list {
+        display: grid;
+        grid-gap: 40px;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0 auto;
+        max-width: 1000px;
+    }
+
+
+
+    /* OM OS */
+
+    .tekst {
+        flex-basis: 100px;
+        flex-grow: 1;
+    }
+
+    .billede {
+        flex-basis: 100px;
+        flex-grow: 1;
+    }
+
+    #land .tekst {
+        padding-left: 20px;
+    }
+
+    #land .billede {
+        padding-right: 20px;
+    }
+
+    #om_os .tekst {
+        padding-right: 20px;
+    }
+
+    #om_os .billede {
+        padding-left: 20px;
+    }
+}
