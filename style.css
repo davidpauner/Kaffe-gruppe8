@@ -30,6 +30,14 @@ h3 {
     font-family: helvetica;
 }
 
+h4 {
+    color: white;
+    margin: 0;
+    padding-bottom: 10px;
+    font-family: helvetica;
+    font-size: 40px;
+}
+
 p {
     margin: 0;
     font-family: helvetica;
@@ -38,7 +46,46 @@ p {
 
 
 
+
+
+
+
+
+/* BURGERMENU */
+#burgermenu {
+    display: flex;
+    position: fixed;
+    right: 14px;
+    top: 14px;
+}
+
+
+#burgermenu img {
+    width: 40px;
+}
+
+
+
+
+
+
+
+
 /* HEADER */
+#header {
+    display: flex;
+    padding: 12px 14px;
+    width: 100vw;
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.64);
+    justify-content: center;
+}
+
+.header {
+    max-width: 1200px;
+    flex-grow: 1;
+}
+
 header a {
     text-decoration: none;
     color: #552800;
@@ -47,11 +94,10 @@ header a {
     padding: 0px 12px;
 }
 
-.header {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 12px 14px;
+header a:hover {
+    color: rgb(245, 219, 196);
 }
+
 
 header img {
     width: 200px;
@@ -59,10 +105,24 @@ header img {
 
 header li {
     list-style-type: none;
+}
+
+#menu {
     align-items: center;
     font-family: helvetica;
     padding-top: 5px;
 }
+
+nav {
+    opacity: 90%;
+}
+
+.hidden {
+    display: none;
+    transform: translateX(-100%);
+}
+
+
 
 
 
@@ -85,7 +145,7 @@ header li {
 }
 
 #splash h1 {
-    margin-top: 20vh;
+    margin-top: 200px;
 }
 
 #splash p {
@@ -99,7 +159,7 @@ header li {
 }
 
 #splash img {
-    margin-bottom: 40vh;
+    margin-bottom: 250px;
     width: 60px;
 }
 
@@ -137,26 +197,49 @@ header li {
 
 /* OM OS */
 #land {
+    background-color: #EBD9C3;
     display: flex;
     flex-wrap: wrap;
-    background-color: #EBD9C3;
+    justify-content: center;
 }
 
 #om_os {
     display: flex;
     flex-wrap: wrap-reverse;
+    justify-content: center;
 }
 
-.tekst {
-    flex-basis: 800px;
-    flex-grow: 1;
-}
-
+.tekst,
 .billede {
     flex-basis: 800px;
     flex-grow: 1;
+    max-width: 580px;
 }
 
+
+
+
+
+
+
+
+/* FOOTER */
+#footer {
+    background-color: rgba(28, 11, 8, 0.94);
+    padding: 60px 40px 50px;
+    display: flex;
+    justify-content: center;
+}
+
+#footer p {
+    color: white;
+    padding-bottom: 10px;
+}
+
+.footer {
+    max-width: 1200px;
+    flex-grow: 1;
+}
 
 
 
@@ -188,11 +271,31 @@ header li {
 
 
 
-@media (min-width:600px) {
+
+@media (min-width:740px) {
+
+    /* BURGERMENU */
+    #burgermenu {
+        display: none;
+    }
+
+    #menu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #menu.hidden {
+        transform: translateX(0);
+        opacity: 1;
+    }
 
     /* HEADER */
     header img {
         width: 250px;
+    }
+
+    .header {
+        display: flex;
     }
 
     /* SPLASH */
@@ -206,10 +309,8 @@ header li {
         grid-gap: 40px;
         grid-template-columns: repeat(3, 1fr);
         margin: 0 auto;
-        max-width: 1000px;
+        max-width: 1200px;
     }
-
-
 
     /* OM OS */
 

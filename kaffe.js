@@ -11,7 +11,26 @@ async function loadJSON() {
     addEventListenersToButtons();
     visKaffer();
 
+    document.querySelector("#burgermenu").addEventListener("click", toggleMenu);
 }
+
+
+function toggleMenu() {
+    console.log("toggleMenu");
+
+    document.querySelector("#menu").classList.toggle("hidden");
+
+    let erSkjult = document.querySelector("#menu").classList.contains("hidden");
+
+    if (erSkjult == true) {
+        document.querySelector("#burgermenu").innerHTML = "<img src = \"images_coffee/burger.svg\" alt=\"burger\">";
+    } else {
+        document.querySelector("#burgermenu").innerHTML = "<img src=\"images_coffee/kryds.svg\" alt = \"kryds\">";
+    }
+}
+
+
+
 
 function visKaffer() {
     const templatePointer = document.querySelector("template");
