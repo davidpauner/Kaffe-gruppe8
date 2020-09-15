@@ -95,4 +95,6 @@ function filterBTNs() {
     visKaffer();
 }
 
+
+
 loadJSON();
