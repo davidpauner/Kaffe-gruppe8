@@ -12,7 +12,9 @@ async function loadJSON() {
     visKaffer();
 
     document.querySelector("#burgermenu").addEventListener("click", toggleMenu);
+
 }
+
 
 
 function toggleMenu() {

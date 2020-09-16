@@ -21,7 +21,7 @@
 
     <main>
         <header id="header">
-            <article class="header">
+            <div class="header">
                 <img src="images_coffee/kaffe_logo.svg" alt="logo">
 
                 <article id="burgermenu">
@@ -38,14 +38,15 @@
                         </li>
                     </ul>
                 </nav>
-            </article>
+            </div>
         </header>
 
         <section id="splash">
             <h1>KAFFE</h1>
             <p>Kort tekst om et eller andet omkring kaffe. <br> Hav en god dag!</p>
-            <button>Se alle produkter</button>
-            <img src="images_coffee/plash_pil.png" alt="splash pil">
+            <a href="#produkter">
+                <img class="splash_pil" src="images_coffee/plash_pil.png" alt="splash pil">
+            </a>
         </section>
 
 
@@ -57,9 +58,9 @@
         <section id="produkter">
             <h2 class="produkter">Produkter</h2>
             <article class="filter_knapper">
-                <button class="filter valgt" data-kategori="alle">Alle</button>
-                <button class="filter" data-kategori="bønne">Bønne</button>
-                <button class="filter" data-kategori="bryggemetode">Bryggemetoder</button>
+                <a class="filter valgt" data-kategori="alle">Alle</a>
+                <a class="filter" data-kategori="bønne">Bønne</a>
+                <a class="filter" data-kategori="bryggemetode">Bryggemetoder</a>
             </article>
             <h3>Alle</h3>
             <article id="list"></article>
