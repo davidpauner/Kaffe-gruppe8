@@ -11,10 +11,16 @@
             background-color: #f5ebe1;
         }
 
-        section {
-            padding: 40px 40px;
+        a {
+            padding: 8px 12px;
+            background-color: #46241A;
+            margin: 10px;
+            color: white;
+            font-family: helvetica;
+        }
 
-
+        #knap {
+            padding: 20px 0;
         }
 
         img {
@@ -26,6 +32,7 @@
         #detaljer {
             display: flex;
             flex-wrap: wrap-reverse;
+            padding: 40px 40px;
         }
 
         .tekst {
@@ -66,14 +73,15 @@
             padding: 0 30px;
 
         }
-
     </style>
 </head>
 
 <body>
 
 
-    <button id="luk">Tilbage</button>
+    <section id="knap">
+        <a id="luk">Tilbage</a>
+    </section>
     <section id="detaljer">
         <article class="tekst">
             <h2></h2>
@@ -145,8 +153,5 @@
 
 
         document.querySelector("#luk").addEventListener("click", () => history.back());
-
     </script>
-</body>
-
-</html>
+</body></html>

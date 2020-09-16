@@ -10,6 +10,7 @@
 
 
 <body>
+    <!-- Template lavet med indhold til produktside - Herunder billede, underoverskrift, brødtekst og kategorien. -->
     <template>
         <article>
             <img src="" alt="">
@@ -20,13 +21,17 @@
     </template>
 
     <main>
+        <!-- Header skal inholde både navigation i web version, men også som burgermenu. Indhold indsat i header, for senere at kunne javascript burgermenuens funktion. -->
         <header id="header">
+            <!-- ekstra div lavet for at ligge en max-width på indholdet, men stadig kunne have en baggrundsfarve med 100vw; -->
             <div class="header">
                 <img src="images_coffee/kaffe_logo.svg" alt="logo">
+
 
                 <article id="burgermenu">
                     <img src="images_coffee/burger.svg" alt="burger">
                 </article>
+
 
                 <nav id="menu" class="hidden">
                     <ul>
@@ -41,6 +46,7 @@
             </div>
         </header>
 
+        <!-- Splash = forsiden / Det første man ser når man går ind på hjemmesiden.  -->
         <section id="splash">
             <h1>KAFFE</h1>
             <p>Kort tekst om et eller andet omkring kaffe. <br> Hav en god dag!</p>
@@ -50,11 +56,13 @@
         </section>
 
 
+        <!-- På vores hjemmeside har vi valgt at lave en one-pager, og for at dette kan fungere, har vi indsat pile, som skal navigerer brugeren gennem siden (nedad)  -->
         <article class="pil" id="pil_splash_produkter">
             <img src="images_coffee/brun_pil.png" alt="brun pil">
         </article>
 
 
+        <!-- Selve produktsiden / sektionen. Herunder indsat en article med data-kategori fra excel arket, for at fortælle hvorfra hjemmesidne skal inhente indholdet fra.  -->
         <section id="produkter">
             <h2 class="produkter">Produkter</h2>
             <article class="filter_knapper">
@@ -72,12 +80,16 @@
         </article>
 
 
+        <!-- Vi har valgt at lave en 'om os' sektion, for at gøre siden mere personlig, og for at kunden / læseren kan få mere information. En side med kun produkter ville virke utroværdig.  -->
         <section id="om_os">
 
             <article class="tekst">
                 <h2>Hvem er vi?</h2>
                 <p>Vi er tre kaffeentusiaster, som brænder for en god bønne. I hverdagen er vi studerende, men vi bruger alt vores fritid på at rejse rundt og finde nye bønner, som vi kan tage med til Danmark. Vi arrangerer engang imellem nogle events, hvor deltagere kan være med til at smage kaffe fra forskellige lande og på forskellige bryggemetoder.
+                    Vores store passion er kaffe som er fairtrade og økologisk. Det er vores ambition med siden at dele ud af vores viden om bønner og bryggemetoder, og forhåbentlig åbne nogens øjne for hvor magisk kaffe er. <br> <br>
+                    Vi er tre kaffeentusiaster, som brænder for en god bønne. I hverdagen er vi studerende, men vi bruger alt vores fritid på at rejse rundt og finde nye bønner, som vi kan tage med til Danmark. Vi arrangerer engang imellem nogle events, hvor deltagere kan være med til at smage kaffe fra forskellige lande og på forskellige bryggemetoder.
                     Vores store passion er kaffe som er fairtrade og økologisk. Det er vores ambition med siden at dele ud af vores viden om bønner og bryggemetoder, og forhåbentlig åbne nogens øjne for hvor magisk kaffe er.
+
                 </p>
             </article>
             <article class="billede">
@@ -101,14 +113,18 @@
                 <p>Vi startede vores rejse i efteråret 2016 i Colombia hvor vi høstede egne bønner. Her blev vi helt hooked på at vide mere.
                     Vi har rejst i mange verdenshjørner efter kaffebønner, men især Colombia gjorde stort indtryk på os. Kaffen dér er vores personlige favorit.
                     Til foråret i 2021, hvis pandemien tillader det, går rejsen til Japan, hvor vi skal dykke ned i en helt anden kaffekultur. Og vi glæder os.
+                    <br> <br>
+                    Vi har rejst i mange verdenshjørner efter kaffebønner, men især Colombia gjorde stort indtryk på os. Kaffen dér er vores personlige favorit.
+                    Til foråret i 2021, hvis pandemien tillader det, går rejsen til Japan, hvor vi skal dykke ned i en helt anden kaffekultur. Og vi glæder os. <br> Vi har rejst i mange verdenshjørner efter kaffebønner, men især Colombia gjorde stort indtryk på os. Kaffen dér er vores personlige favorit.
+                    Til foråret i 2021, hvis pandemien tillader det, går rejsen til Japan, hvor vi skal dykke ned i en helt anden kaffekultur. Og vi glæder os.
                 </p>
             </article>
         </section>
 
-
+        <!-- For kontakt information -->
         <footer id="footer">
             <article class="footer">
-                <h4>KAFFE</h4>
+                <h4>KONTAKT OS</h4>
                 <p>Adresse: Lygten 37, 2400 København NV </p>
                 <p>E-mail: kontakt@kaffe.dk</p>
                 <p>Tlf: +45 xx xx xx</p>
@@ -117,6 +133,4 @@
 
     </main>
     <script src="kaffe.js"></script>
-</body>
-
-</html>
+</body></html>

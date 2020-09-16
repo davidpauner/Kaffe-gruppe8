@@ -12,22 +12,26 @@ section {
     padding: 60px 40px;
 }
 
-/* FONT */
+/* FONTE
+Generel css styling for alle overskrifter og underoverskrifter */
 h1 {
     margin: 0;
     color: white;
     font-size: 70px;
     font-family: helvetica;
+    text-transform: uppercase;
 }
 
 h2 {
     font-family: helvetica;
+    text-transform: uppercase;
 }
 
 h3 {
     display: flex;
     justify-content: center;
     font-family: helvetica;
+    text-transform: uppercase;
 }
 
 h4 {
@@ -36,6 +40,7 @@ h4 {
     padding-bottom: 10px;
     font-family: helvetica;
     font-size: 40px;
+    text-transform: uppercase;
 }
 
 p {
@@ -51,9 +56,9 @@ p {
 
 
 
-/* BURGERMENU */
+/* BURGERMENU
+I html gav vi burgermenuen et id, så vi her i css kunne style den.*/
 #burgermenu {
-    display: flex;
     position: fixed;
     right: 14px;
     top: 14px;
@@ -71,16 +76,20 @@ p {
 
 
 
-/* HEADER */
+/* HEADER
+Generel styling af header.
+- Med en position fixed og en gennemsigtig baggrund, har vi fået den sticky menu vi godt kunne tænke os.
+Med flexbox har vi fået menuen til at blive indefor de 1200px;*/
 #header {
-    display: flex;
     padding: 12px 14px;
     width: 100vw;
     position: fixed;
-    background-color: rgba(255, 255, 255, 0.64);
+    background-color: rgba(255, 255, 255, 0.76);
+    display: flex;
     justify-content: center;
 }
 
+/*ekstra div lavet for at ligge en max-width på indholdet, men stadig kunne have en baggrundsfarve med 100vw;*/
 .header {
     max-width: 1200px;
     flex-grow: 1;
@@ -90,8 +99,11 @@ header a {
     text-decoration: none;
     color: #552800;
     text-transform: uppercase;
-    list-style-type: none;
     padding: 0px 12px;
+}
+
+header a:first-child {
+    padding: 0;
 }
 
 header a:hover {
@@ -105,10 +117,10 @@ header img {
 
 header li {
     list-style-type: none;
+
 }
 
 #menu {
-    align-items: center;
     font-family: helvetica;
     padding-top: 5px;
 }
@@ -131,7 +143,8 @@ nav {
 
 
 
-/* SPLASH */
+/* SPLASH
+- stylet således at indholdet og billedet er centreret helt fra web til mobil version*/
 #splash {
     display: flex;
     flex-wrap: wrap;
@@ -169,7 +182,8 @@ nav {
 
 
 
-/* PRODUKTER */
+/* PRODUKTER
+- Grid'et er lavet i mediaquery 750px (længere nede i css), da vi har tænkt mobile first og griddet kun skal fungere i web verison.'*/
 #produkter {
     background-color: #f5ebe1;
 }
@@ -185,7 +199,25 @@ nav {
 }
 
 #list p {
+    margin-bottom: 60px;
+}
+
+#produkter h2 {
+    margin-bottom: 10px;
+}
+
+#produkter h3 {
     margin-bottom: 40px;
+}
+
+/* PRODUKT KNAPPER
+- indsat som anker href, for bedre css styling*/
+#produkter a {
+    padding: 10px;
+    background-color: #46241A;
+    margin: 4px;
+    color: white;
+    font-family: helvetica;
 }
 
 
@@ -193,9 +225,8 @@ nav {
 
 
 
-
-
-/* OM OS */
+/* OM OS
+-Denne sektion er stylet med flexbox, for hurtigt og nemt at få et responsivt design, med fokus på mobil-first. (Web i media query)*/
 #land {
     background-color: #EBD9C3;
     display: flex;
@@ -223,7 +254,8 @@ nav {
 
 
 
-/* FOOTER */
+/* FOOTER
+- display: flex; brugt for at få designet til at se godt ud på en stor skærm (max width 1200px;)*/
 #footer {
     background-color: rgba(28, 11, 8, 0.94);
     padding: 60px 40px 50px;
@@ -238,6 +270,7 @@ nav {
 
 .footer {
     max-width: 1200px;
+    /*for at vise der kun er én box indenfor de 1200px: flex-grow*/
     flex-grow: 1;
 }
 
@@ -247,7 +280,9 @@ nav {
 
 
 
-/* PILE */
+/* PILE
+- Pilene er indsat i deres egen sektion, og er enkelt placeret midt på skærmen for at guide læserens opmærksomhed nedad siden.
+*/
 #pil_splash_produkter {
     background-color: #f5ebe1;
 }
@@ -275,7 +310,7 @@ nav {
 
 
 
-
+/* For et responsivt design har vi startet med mobil versionen er hjemmesiden (alt overstående css styling) og hernæst css'et en min-width media query, for at style web versionen lidt anderledes. Siden ændre sig fra mobil view til ipad/web version ved 740px. */
 @media (min-width:740px) {
 
     /* BURGERMENU */
@@ -302,10 +337,12 @@ nav {
         display: flex;
     }
 
+
     /* SPLASH */
     h1 {
         font-size: 100px;
     }
+
 
     /* PRODUKTER */
     #list {
@@ -316,8 +353,12 @@ nav {
         max-width: 1200px;
     }
 
-    /* OM OS */
+    #list p {
+        margin-bottom: 30px;
+    }
 
+
+    /* OM OS */
     .tekst {
         flex-basis: 100px;
         flex-grow: 1;
