@@ -34,6 +34,7 @@ function toggleMenu() {
 
 
 
+
 function visKaffer() {
     const templatePointer = document.querySelector("template");
     const listPointer = document.querySelector("#list");
