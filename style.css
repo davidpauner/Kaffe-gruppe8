@@ -64,16 +64,9 @@ I html gav vi burgermenuen et id, så vi her i css kunne style den.*/
     top: 14px;
 }
 
-
 #burgermenu img {
     width: 40px;
 }
-
-
-
-
-
-
 
 
 /* HEADER
@@ -250,10 +243,6 @@ nav {
 
 
 
-
-
-
-
 /* FOOTER
 - display: flex; brugt for at få designet til at se godt ud på en stor skærm (max width 1200px;)*/
 #footer {
@@ -301,11 +290,6 @@ nav {
     display: flex;
     justify-content: center;
 }
-
-
-
-
-
 
 
 
@@ -384,4 +368,98 @@ nav {
     #om_os .billede {
         padding-left: 20px;
     }
+}
+
+
+
+/* SINGLE VIEW SIDEN */
+#detaljer_body {
+    margin: 0;
+    background-color: #f5ebe1;
+    display: flex;
+    justify-content: center;
+}
+
+#detaljer_body a {
+    padding: 8px 12px;
+    background-color: #46241A;
+    color: white;
+    font-family: helvetica;
+}
+
+#detaljer_body #header {
+    margin-left: 20px;
+}
+
+#detaljer_body section {
+    padding: 0;
+}
+
+#detaljer_indhold {
+    max-width: 1200px;
+}
+
+#detaljer_body #knap {
+    padding: 100px 0 50px 30px;
+}
+
+#detaljer_body #header img {
+    max-width: 250px;
+}
+
+#detaljer_body #detaljer img {
+    max-width: 100%;
+}
+
+#detaljer_body #detaljer {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    flex-grow: 1;
+}
+
+#detaljer_body .tekst {
+    flex-basis: 800px;
+}
+
+#detaljer_body .billede {
+    flex-basis: 800px;
+    flex-grow: 1;
+}
+
+#detaljer_body p {
+    font-family: helvetica;
+}
+
+#detaljer_body h2 {
+    font-family: helvetica;
+}
+
+#detaljer_body button {}
+
+@media (min-width:750px) {
+
+    #detaljer_body {
+        display: flex;
+        justify-content: center;
+    }
+
+    #detaljer_indhold {
+        justify-content: flex-start;
+    }
+
+    #detaljer_body .tekst {
+        flex-basis: 100px;
+        flex-grow: 1;
+
+    }
+
+    #detaljer_body .billede {
+        flex-basis: 100px;
+        flex-grow: 1;
+    }
+}
+
+#detaljer_body article {
+    padding: 0 30px;
+
 }
