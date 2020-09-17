@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", loadJSON);
 
 
 
+//her hentes json data og sendes videre hen til visKaffer. Hvis der klikkes på brugermenuen, henter den funtionen toggleMenu.
 
 async function loadJSON() {
     const JSONData = await fetch("https://spreadsheets.google.com/feeds/list/1cusyHmJ0ML-csQjEMGf9hkosvQJtib6zNYnf44xYeA4/od6/public/values?alt=json");
@@ -15,7 +16,7 @@ async function loadJSON() {
 
 }
 
-
+// Classen hidden tilføjes/fjernes når der tages fat i menu. Billedet af burgermenuen vises.
 
 function toggleMenu() {
     console.log("toggleMenu");
@@ -33,12 +34,12 @@ function toggleMenu() {
 
 
 
-
+//visKaffer sætter hver enkelt bønne/metode in i html
 
 function visKaffer() {
     const templatePointer = document.querySelector("template");
     const listPointer = document.querySelector("#list");
-    listPointer.innerHTML = "";
+    listPointer.innerHTML = ""; //html containeren tømmes og der tilgøjes nyt indhold
 
     kaffer.feed.entry.forEach(kaffe => {
         if (filter == "alle" || filter == kaffe.gsx$kategori.$t) {
@@ -56,9 +57,7 @@ function visKaffer() {
             minKlon.querySelector(".beskrivelse").textContent = kaffe.gsx$beskrivelse.$t;
 
 
-
-
-
+            // Når der tages fat i article, hentes functionen visDetaljer som er et single view med produkterne detaljer
             minKlon.querySelector("article").addEventListener("click", () => visDetaljer(kaffe));
 
             listPointer.appendChild(minKlon);
@@ -69,7 +68,7 @@ function visKaffer() {
 
 }
 
-
+// funktionen viser hver enkelt kaffe/metode i et nyt vindue.
 
 function visDetaljer(kaffe) {
     console.log(kaffe);
@@ -80,12 +79,16 @@ function visDetaljer(kaffe) {
 document.querySelector("#luk").addEventListener("click", () => popup.style.display = "none");
 
 
+// funktion der lægger en eventlistener på at filtreringsknapperne. Funktionen filtrere indholdet på siden alt efter hvilken knap der trykke på. Når der klikkes hentes funktionen filterBTN
 
 function addEventListenersToButtons() {
     document.querySelectorAll(".filter").forEach((btn) => {
         btn.addEventListener("click", filterBTNs);
     });
 }
+
+
+// Denne funktion udskriver indholdet på siden. Alt efter hvilken knap der trykkes på, vil indholdet i h3 ændre sig til det valgte.
 
 function filterBTNs() {
     filter = this.dataset.kategori;
